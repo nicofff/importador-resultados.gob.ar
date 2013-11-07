@@ -20,3 +20,18 @@ for i in range(1, 25):
     for partido in partidos:
         print (str(idPartido)+","+ distrito+","+partido)
         idPartido+=1
+    
+    print (str(idPartido)+","+ distrito+","+"Votos en blanco")
+    idPartido+=1
+    
+    print (str(idPartido)+","+ distrito+","+"Votos nulos")
+    idPartido+=1
+    
+    print (str(idPartido)+","+ distrito+","+"Votos recurridos")
+    idPartido+=1
+    
+    print (str(idPartido)+","+ distrito+","+"Impugnado")
+    idPartido+=1
+
+
+

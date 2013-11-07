@@ -7,6 +7,9 @@ REcolumnas=re.compile("<th .*?>(.*?)</th>")
 REdataPartido=re.compile('<tr>\s*(<th class="alaizquierda".*?)</tr>', re.DOTALL)
 REnombrepartido = re.compile('<th .*?>(.*?)</th>')
 REvotosPartido = re.compile('<td .*?>(.*?)</td>')
+REinvalidos = re.compile('<tr>\s+(<th class="c.*?)</tr>',re.DOTALL)
+
+
 salida= open("VotosDiputados.csv", "w")
 idVoto=1
 partidos=open("Partidos.csv").readlines()
@@ -40,6 +43,7 @@ for archivoMesa in archivosMesa:
                 columnaDiputados=i
         
         dataPartido = REdataPartido.findall(data)
+        dataPartido += REinvalidos.findall(data)[1:]
         for partido in dataPartido:
             nombrepartido=REnombrepartido.findall(partido)[0]
             votosPartido=REvotosPartido.findall(partido)[columnaDiputados-1]
