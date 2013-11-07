@@ -18,7 +18,7 @@ for i in range(1, 25):
             mesas = re.findall("  >([0-9]{4})<", h.read())
             h.close()
             for mesa in mesas:
-                print(str(idCircuito)+mesa+","+str(idCircuito)+","+mesa)
+                print(distrito+mesa +","+circuito+","+mesa)
             idCircuito+=1
 
     

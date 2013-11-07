@@ -1,7 +1,6 @@
 import os
 import re
 os.chdir("/home/nico/PartidoPirata/elecciones/www.resultados.gob.ar/telegramas")
-id=1
 
 for i in range(1, 25):
     distrito= str(i).rjust(2, "0");
@@ -13,7 +12,6 @@ for i in range(1, 25):
         g= open("ICIR"+codigoMunicipio+".html", encoding="latin-1")
         circuitos = re.findall("  >([0-9]{4}[A-Z]?)<", g.read())
         for circuito in circuitos:
-            print (str(id)+","+codigoMunicipio+","+circuito)
-            id+=1
+            print (circuito+","+codigoMunicipio)
         
     
